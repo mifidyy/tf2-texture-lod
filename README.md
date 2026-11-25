@@ -13,18 +13,20 @@ You need the native Linux version of Team Fortress 2 installed through Steam and
 3. In **Steam → Library**, right-click **Team Fortress 2** and open **Properties → General → Launch Options**. If you previously forced Proton for TF2, clear that override in **Compatibility** so Steam uses the native Linux version.
 4. Paste the following line into **Launch Options**. Replace the example path with your folder's path and keep the quotes. If you already have game arguments, keep them after `%command%`.
 
+   The line includes `TF2_LOD_BIAS=3` and `TF2_LOD_MAX_MIP=2`, the recommended settings for getting closest to the Windows NVIDIA Profile Inspector look with **LOD bias +15** and **Transparency Supersampling** set to `AA_MODE_REPLAY_MODE_ALL`.
+
    ```text
-   VK_ADD_LAYER_PATH="/home/alex/Downloads/tf2-texture-lod" VK_INSTANCE_LAYERS=VK_LAYER_LOCAL_tf2_texture_lod %command% -vulkan
+   VK_ADD_LAYER_PATH="/home/alex/Downloads/tf2-texture-lod" VK_INSTANCE_LAYERS=VK_LAYER_LOCAL_tf2_texture_lod TF2_LOD_BIAS=3 TF2_LOD_MAX_MIP=2 %command% -vulkan
    ```
 
-5. Launch TF2 and load a map to see the texture change. To undo the tweak, remove the two `VK_…` settings from **Launch Options** and restart the game. Remove `-vulkan` too if you added it solely for this tweak.
+5. Launch TF2 and load a map to see the texture change. To undo the tweak, remove the four settings before `%command%` that you added for the layer and restart the game. Remove `-vulkan` too if you added it solely for this tweak.
 
 ### Using Gamescope or MangoHud
 
 With Gamescope, put the layer variables after Gamescope's `--`. This applies the layer to the game instead of the compositor.
 
 ```sh
-gamescope -- env VK_ADD_LAYER_PATH="/path/to/tf2-texture-lod/build" VK_INSTANCE_LAYERS=VK_LAYER_LOCAL_tf2_texture_lod %command% -vulkan
+gamescope -- env VK_ADD_LAYER_PATH="/home/alex/Downloads/tf2-texture-lod" VK_INSTANCE_LAYERS=VK_LAYER_LOCAL_tf2_texture_lod TF2_LOD_BIAS=3 TF2_LOD_MAX_MIP=2 %command% -vulkan
 ```
 
 Disable MangoHud's `picmip` override when using this layer so only one layer controls bias.
