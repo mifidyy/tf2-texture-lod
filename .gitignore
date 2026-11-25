@@ -1,0 +1,13 @@
+/build/
+/build-*/
+/cmake-build-*/
+/CMakeCache.txt
+/CMakeFiles/
+/cmake_install.cmake
+/compile_commands.json
+/Makefile
+/build.ninja
+/.ninja_deps
+/.ninja_log
+/libtf2_texture_lod.so
+/VK_LAYER_LOCAL_tf2_texture_lod.json

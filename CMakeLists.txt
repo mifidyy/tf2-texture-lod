@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.21)
+project(tf2_texture_lod LANGUAGES CXX)
+
+find_package(Vulkan REQUIRED)
+add_library(tf2_texture_lod SHARED layer.cpp)
+target_link_libraries(tf2_texture_lod PRIVATE Vulkan::Headers)
+target_compile_features(tf2_texture_lod PRIVATE cxx_std_17)
+target_compile_options(tf2_texture_lod PRIVATE -Wall -Wextra -Wpedantic)
+set_target_properties(tf2_texture_lod PROPERTIES CXX_VISIBILITY_PRESET hidden)
+configure_file(layer.json VK_LAYER_LOCAL_tf2_texture_lod.json COPYONLY)

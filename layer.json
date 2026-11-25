@@ -1,0 +1,11 @@
+{
+  "file_format_version": "1.0.0",
+  "layer": {
+    "name": "VK_LAYER_LOCAL_tf2_texture_lod",
+    "type": "GLOBAL",
+    "library_path": "./libtf2_texture_lod.so",
+    "api_version": "1.3.0",
+    "implementation_version": "1",
+    "description": "Add texture LOD bias with a coarse mip limit"
+  }
+}
