@@ -2,8 +2,7 @@
 
 Get the blurry, low-detail texture look from TF2 **LOD tweaks (lodtweaks)** on Linux. TF2 Texture LOD is a Vulkan layer for the native Linux version of Team Fortress 2 on Steam.
 
-<!-- Before publishing, replace OWNER/tf2-texture-lod below with the GitHub repository path and attach tf2-texture-lod-linux-x86_64.zip to the release. -->
-[![Download for Linux (64-bit)](https://img.shields.io/badge/Download-Linux%20%2864--bit%29-2ea44f?style=for-the-badge)](https://github.com/OWNER/tf2-texture-lod/releases/latest/download/tf2-texture-lod-linux-x86_64.zip)
+[![Download for Linux (64-bit)](https://img.shields.io/badge/Download-Linux%20%2864--bit%29-2ea44f?style=for-the-badge)](https://github.com/mifidyy/tf2-texture-lod/releases/latest/download/tf2-texture-lod-linux-x86_64.zip)
 
 ## Install on Linux
 
