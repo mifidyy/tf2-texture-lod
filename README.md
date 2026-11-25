@@ -4,6 +4,12 @@ Get the blurry, low-detail texture look from TF2 **LOD tweaks (lodtweaks)** on L
 
 [![Download for Linux (64-bit)](https://img.shields.io/badge/Download-Linux%20%2864--bit%29-2ea44f?style=for-the-badge)](https://github.com/mifidyy/tf2-texture-lod/releases/latest/download/tf2-texture-lod-linux-x86_64.zip)
 
+## TF2 LOD tweaks on Linux with MangoHud `picmip`
+
+When I tried MangoHud's `picmip` in TF2, the textures either looked flat or showed no visible change. MangoHud's setting adjusts mipmap LOD bias. [MangoHud configuration reference](https://github.com/flightlessmango/MangoHud/blob/master/data/MangoHud.conf)
+
+TF2 Texture LOD gives you a separate limit on how coarse the textures can get. The preset below uses a bias of `3` to favor blur and a mip cap of `2` to keep more texture detail. If you ran into the same problem with `picmip`, start with that preset.
+
 ## Install on Linux
 
 You need the native Linux version of Team Fortress 2 installed through Steam and a working Vulkan graphics driver. The download contains the two files you need. There is no installer to run.
@@ -29,7 +35,7 @@ With Gamescope, put the layer variables after Gamescope's `--`. This applies the
 gamescope -- env VK_ADD_LAYER_PATH="/home/alex/Downloads/tf2-texture-lod" VK_INSTANCE_LAYERS=VK_LAYER_LOCAL_tf2_texture_lod TF2_LOD_BIAS=3 TF2_LOD_MAX_MIP=2 %command% -vulkan
 ```
 
-Disable MangoHud's `picmip` override when using this layer so only one layer controls bias.
+You can keep the MangoHud overlay enabled. Remove the `picmip` setting from your MangoHud config for TF2 so only TF2 Texture LOD adjusts the bias.
 
 ## NVIDIA Profile Inspector for Linux and TF2
 
